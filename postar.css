@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: rgb(211, 220, 208);
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.causa{
+    background-color: white;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 350px;
+    height: 400px;
+    border: solid 1px;
+    border-radius: 15px;
+}
+#publicar{
+    background-color: rgb(69, 126, 69);
+    color: white;
+    border-radius: 15px;
+    height: 50px;
+    width: 100px;
+    border:none;
+}
+input{
+    width: 200px;
+    border-radius: 15px;
+    border: solid 1px;
+    padding-left: 5px;
+}
+h1{
+    font-size: larger;
+}

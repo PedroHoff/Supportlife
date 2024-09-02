@@ -1,0 +1,210 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* NAVBAR */
+.nav{
+    background-color: white;
+    display: flex;
+    width: 201vh;
+    align-items: center;
+    justify-content: center;
+}
+nav h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 14vh;
+    font-weight: 300;
+    font-size: 30px;
+    font-style: italic;
+    background-color: white;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* SECTION 1 */
+
+.div1{
+    background-color: rgb(223, 223, 223);
+    width: 190vh;
+    height: 70vh;
+    border-radius: 15px;
+    padding: 15px;
+    flex-direction: column;
+    justify-content: center;
+   
+/* Publicação */
+}
+.campanha{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+}
+.campanha h1{
+    font-size: 27px;
+    display: flex;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+
+.criação{
+    display: flex;
+
+    justify-content: space-around;
+    height: 80%;
+    width: 100%;
+}
+.causa1{
+    height: 100%;
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    
+}
+.causa1 h1{
+    padding: 20px;
+    font-weight: 300;
+}
+
+input{
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    border: solid 1px;
+    padding-left: 5px;
+}
+.ultima_doação{
+    display: flex;
+    align-items: center;
+    height: 45%;
+    width: 90%;
+    background-color: #8BBC7B;
+    padding-left: 80px;
+}
+.ultima_doação p{
+    font-size: 30px;
+    color: white;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium';
+}
+.Perfil{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 45%;
+    width: 90%;
+    background-color: rgb(255, 255, 255);
+}
+.foto_perfil{
+    height: 250px;
+    width: 250px;
+    border-radius: 150px;
+    background-color: #9AA19D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.infos{
+    height: 105%;
+    width: 55%;
+    border-radius: 30px;
+    background-color: #9AA19D;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+}
+.infos p{
+    font-size: 20px;
+    font-weight: 100;
+    font-family: 'Franklin Gothic Medium';
+    color: white;
+}
+.infos h1{
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium';
+    color: white;
+}
+#editar{
+    background-color: #8BBC7B;
+    border: none;
+    border-radius: 25px;
+    height: 50px;
+    width: 250px;
+    color: white;
+    font-size: 25px;
+    font-style: oblique;
+}
+/* próxima divisão */
+
+.causa2{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+.causa2 h1{
+    text-decoration: solid;
+    font-size: 45px;
+    font-weight: 400;
+}
+.imagem_causa{
+    padding: 15px;
+    background-color: #D1FFBE;
+    height: 55%;
+    width: 90%;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 5px 7px 5px 5px lightgrey
+    
+}
+.imagem_causa p{
+    font-size: 30px;
+    font-weight: 100;
+    font-family: 'Franklin Gothic Medium';
+}
+#localização{
+    background-color: #1B462D;
+    border: none;
+    border-radius: 25px;
+    height: 50px;
+    width: 250px;
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+}
+#precisa{
+    background-color: #689B5A;
+    height: 170px;
+    width: 550px;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 55px;
+    color: white;
+    font-weight: 600;
+}
+a{
+    text-decoration: none;
+}
