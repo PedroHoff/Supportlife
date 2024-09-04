@@ -4,12 +4,16 @@ const dotenv = require('dotenv').config();
 async function storePostar(request, response) {
 
     const params = Array(
+        request.body.userId,
         request.body.imagem,
         request.body.causa,
         request.body.necessidade,
+        request.body.pix,
+        request.body.endereco,
+        request.body.nome
     );
 
-    const query = "INSERT INTO publicacoes(imagem, causa, necessidade) VALUES(?, ?, ?)";
+    const query = "INSERT INTO publicacoes(userId, imagem, causa, necessidade, pix, endereco, nome) VALUES(?, ?, ?, ?, ?, ?, ?)";
 
     connection.query(query, params, (err, results) => {
         if (results) {

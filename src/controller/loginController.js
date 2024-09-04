@@ -10,9 +10,6 @@ async function login(request, response) {
     const params = Array(
         request.body.email
     );
-    
-
-
 
 connection.query(query, params, (err, results) => {
         try {
@@ -24,9 +21,14 @@ connection.query(query, params, (err, results) => {
                             msg: 'Email or password is incorrect!'
                         });
                     } else if (result) {
-                        const id = results[0].id;
-                        const token = jwt.sign({ userId: id }, 'the-super-strong-secrect', { expiresIn: 300 });
-                        results[0]['token'] = token;
+                        const userData = results[0];
+                        const userId = userData.id;
+                        const token = jwt.sign(
+                            { userId },
+                            'token',
+                            { expiresIn: 300 }
+                        );
+                        userData['token'] = token;
 
                         response
                             .status(200)
