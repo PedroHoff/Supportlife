@@ -13,7 +13,7 @@ async function storePostar(request, response) {
         request.body.nome
     );
 
-    const query = "INSERT INTO publicacoes(userId, imagem, causa, necessidade, pix, endereco, nome) VALUES(?, ?, ?, ?, ?, ?, ?)";
+    const query = "INSERT INTO publicacao(userId, imagem, causa, necessidade, pix, endereco, nome) VALUES(?, ?, ?, ?, ?, ?, ?)";
 
     connection.query(query, params, (err, results) => {
         if (results) {
@@ -33,7 +33,7 @@ async function storePostar(request, response) {
 }
 
 async function getPostar(request, response) {
-    const query = "SELECT * FROM publicacoes";
+    const query = "SELECT * FROM publicacao";
 
     connection.query(query, (err,results) => {
         if(results) {
