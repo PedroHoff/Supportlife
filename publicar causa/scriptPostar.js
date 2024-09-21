@@ -14,7 +14,7 @@ button.onclick = async function() {
     })
 
     let content = await response.json();
-
+    
     if(content.success){
         alert("Sucesso!")
     } else {
