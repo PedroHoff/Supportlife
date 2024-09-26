@@ -7,7 +7,7 @@ button.onclick = async function() {
 
     let dados = {nome, email, senha}
 
-    const response = await fetch('http://localhost:3000/api/store/cadastro1', {
+    const response = await fetch('http://localhost:3000/api/store/cadastro2', {
         method: "POST",
         headers: {"Content-type": "application/json;chartset=UTF-8"},
         body: JSON.stringify(dados)

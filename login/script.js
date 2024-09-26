@@ -16,7 +16,8 @@ button.onclick = async function(){
     
     if(content.success){
         alert('Usuário logado!');
-        window.location.replace("../perfil/principal_usuário.html")
+        localStorage.setItem('user', JSON.stringify(content.data))
+        // /window.location.replace("../perfil/principal_usuário.html")
     }else{
         alert('Informações inválidas!');
     }
