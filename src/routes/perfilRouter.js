@@ -1,20 +1,15 @@
-
 const { Router } = require('express');
 const router = Router();
-const { login } = require('../controller/loginController');
-
-router.post('/store/login', login);
-
 module.exports = router;
 
 /**
  * @swagger
- * /store/login:
- *  post:
- *    summary: Login de Usuário ou Instituição
+ * /store/perfil:
+ *  get:
+ *    summary: Torna o perfil funcional
  *    responses:
  *      200:
- *        description: Sucesso!
+ *        description: Uma lista de tarefas
  *        content:
  *          application/json:
  *            schema:
@@ -23,4 +18,6 @@ module.exports = router;
  *                type: object
  */
  
+
+module.exports = router;
  

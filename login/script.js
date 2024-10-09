@@ -19,15 +19,14 @@ button.onclick = async function() {
         localStorage.setItem('nome', content.data.nome);
 
         if(content.tipo == 'doador')
-            window.location.href = "../perfil/principal_usuário.html";
+            window.location.href = "../perfil doador/principal_usuário.html";
         else
-            window.location.href = "../perfil/principal_instituicao.html";
+            window.location.href = "../perfil instituicao/principal_instituicao.html";
 
         
             document.addEventListener('DOMContentLoaded', () => {
             // Recupera o nome do usuário armazenado
-            const nomeUsuario = localStorage.getItem('nome');
-            
+            const nomeUsuario = localStorage.getItem('nome');    
             
             // Se o nome do usuário existir, exibe no perfil
             if (nomeUsuario) {

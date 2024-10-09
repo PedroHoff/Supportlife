@@ -23,6 +23,14 @@ body{
     align-items: center;
     
 }
+#formulario{
+    display: flex;
+    height: 55vh;
+    width: 120vh;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
 /* SECTION 1 */
 
 .section-1{
@@ -107,8 +115,9 @@ input{
 
 .causa2{
     display: flex;
+    height: 45vh;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: transparent;
 }
@@ -117,8 +126,8 @@ input{
     background-color: white;
     height: 200px;
     width: 550px;
-    border: none;
     border-radius: 15px;
+    border: none;
     align-items: center;
     justify-content: space-around;
     flex-direction: row;

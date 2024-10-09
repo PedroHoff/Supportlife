@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/684b166144.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="usuário.css">
+    <link rel="stylesheet" href="principal.css">
     <link rel="icon" href="../imagens/folha.png">
     <title>Perfil Doador</title>
 </head>
@@ -43,20 +43,15 @@
                             <h1></h1>
                             <p>Data de nascimento: 03/12/2005</p>
                                 <button id="editar">Editar Perfil</button>
-                                <div class="modal" id="editarModal" style="display:none;">
-                                    <form id="formEditar">
+                                <div class="formulario" id="editarFormulario" style="display:none;">
                                         <label for="foto">Foto de Perfil:</label>
-                                        <input type="file" id="foto" accept="image/*"><br>
+                                        <input type="file" id="foto" accept="image/*">
                                         
                                         <label for="dataNascimento">Data de Nascimento:</label>
-                                        <input type="date" id="dataNascimento"><br>
+                                        <input type="date" id="dataNascimento">
                                         
                                         <label for="localizacao">Localização:</label>
-                                        <input type="text" id="localizacao"><br>
-                                        
-                                        <button type="submit">Salvar</button>
-                                        <button type="button" onclick="fecharModal()">Cancelar</button>
-                                    </form>
+                                        <input type="text" id="localizacao">
                                 </div>
                         </div>
                     </div>
@@ -71,8 +66,7 @@
                 <div class="causa2">
                     <section class="local">
                         <h1>Sua localização</h1><br>
-                        <p>Portão</p>
-                        <p>Rua Oswald Richard Número 234</p>
+                        <p>Portão<br>Rua Oswald Richard Número 234</p>
                         <a href="">
                             <button id="localização">Adicionar Localização</button>
                         </a>
@@ -85,6 +79,6 @@
         </div>
     </div>
 </body>
-<script src="scriptPerfil.js"></script>
+<script src="scriptI.js"></script>
 
 </html>
