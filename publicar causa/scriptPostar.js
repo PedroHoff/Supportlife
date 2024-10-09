@@ -14,9 +14,15 @@ button.onclick = async function () {
     });
 
     let content = await response.json();
+<<<<<<< HEAD
 
     if (content.success) {
         alert('Postado com sucesso!')
+=======
+    
+    if(content.success){
+        alert("Sucesso!")
+>>>>>>> 3c2f31196b7424f26c6538c54a95c7ea20e2f7b7
     } else {
         alert('Ocorreu um erro');
     }

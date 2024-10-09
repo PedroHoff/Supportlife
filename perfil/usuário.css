@@ -27,11 +27,21 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: black;
+}
+.perfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 201vh;
+    height: 85vh;
+    background-color: rgb(0, 0, 0);
+
 }
 /* SECTION 1 */
 
 .div1{
-    background-color: rgb(223, 223, 223);
+    background-color: rgb(255, 255, 255);
     width: 190vh;
     height: 70vh;
     border-radius: 15px;
@@ -88,44 +98,61 @@ input{
     border: solid 1px;
     padding-left: 5px;
 }
-.ultima_doação{
+.redes{
     display: flex;
     align-items: center;
-    height: 45%;
-    width: 90%;
-    background-color: #8BBC7B;
-    padding-left: 80px;
+    justify-content: space-evenly;
+    height: 10vh;
+    width: 85vh;
+    background-color: #ffffff;
+
+  
 }
-.ultima_doação p{
-    font-size: 30px;
-    color: white;
-    font-weight: bolder;
-    font-family: 'Franklin Gothic Medium';
+#icon_insta{
+    font-size: 8vh;
+    color: #E1306C
+}
+#icon_face{
+    font-size: 8vh;
+    color: #4267B2
+}
+#icon_x{
+    font-size: 8vh;
+    color: #1DA1F2
+}
+#icon_link{
+    font-size: 8vh;
+    color: #0e76a8
 }
 .Perfil{
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    height: 45%;
+    height: 45vh;
     width: 90%;
     background-color: rgb(255, 255, 255);
 }
+
 .foto_perfil{
-    height: 250px;
-    width: 250px;
+    height: 27vh;
+    width: 27vh;
     border-radius: 150px;
-    background-color: #9AA19D;
+    background-image: url(../imagens/doação\ RS.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: solid;
+    border-color: #575757;
 }
 .infos{
-    height: 105%;
-    width: 55%;
-    border-radius: 30px;
-    background-color: #9AA19D;
+    height: 22vh;
+    width: 46vh;
+    border-radius: 15px;
+    background-color: #2a5032;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-direction: column;
     padding: 10px;
 }
@@ -136,14 +163,14 @@ input{
     color: white;
 }
 .infos h1{
-    font-size: 30px;
-    font-family: 'Franklin Gothic Medium';
+    font-size: 45px;
+    font-weight: bold;
     color: white;
 }
 #editar{
     background-color: #8BBC7B;
     border: none;
-    border-radius: 25px;
+    border-radius: 15px;
     height: 50px;
     width: 250px;
     color: white;
@@ -157,7 +184,7 @@ input{
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: rgb(255, 255, 255);
 }
@@ -166,23 +193,28 @@ input{
     font-size: 45px;
     font-weight: 400;
 }
-.imagem_causa{
+.local{
     padding: 15px;
-    background-color: #D1FFBE;
+    background-color: #6d6d6dc2;
     height: 55%;
     width: 90%;
     border: none;
     border-radius: 15px;
-    box-shadow: 5px 7px 5px 5px lightgrey
-    
+    box-shadow: 5px 7px 5px 5px lightgrey;
+    display: flex;
+    flex-direction: column;
 }
-.imagem_causa p{
+.local h1{
+    color: white;
+}
+.local p{
     font-size: 30px;
     font-weight: 100;
     font-family: 'Franklin Gothic Medium';
+    color: white;
 }
 #localização{
-    background-color: #1B462D;
+    background-color: #29412c;
     border: none;
     border-radius: 25px;
     height: 50px;

@@ -29,7 +29,8 @@ async function login(request, response) {
                 return response.status(200).json({
                     success: true,
                     message: 'Sucesso! Usuário conectado.',
-                    data: userData
+                    data: userData,
+                    tipo: 'doador'
                 });
             });
         } else {
