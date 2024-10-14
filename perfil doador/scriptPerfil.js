@@ -8,12 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.log('Usuário não logado');
     }
-});
-
-let editarmodal = document.getElementById("editarModal") {
-    style: block,
-};
-
+})
 
 let button = document.getElementById("submit")
 

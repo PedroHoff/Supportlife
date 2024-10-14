@@ -1,6 +1,10 @@
 const { Router } = require('express');
 const router = Router();
-module.exports = router;
+const { storeInstituicao, getInstituicao } = require('../controller/perfil_instituicaoController'); // Corrigido para "controllers"
+
+// Rota para criar ou atualizar o perfil da instituição
+router.post('/store/instituicao', storeInstituicao);
+router.get('/get/instituicao', getInstituicao);
 
 /**
  * @swagger
@@ -17,7 +21,4 @@ module.exports = router;
  *              items:
  *                type: object
  */
- 
-
 module.exports = router;
- 

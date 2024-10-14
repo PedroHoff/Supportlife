@@ -43,16 +43,20 @@
                             <h1></h1>
                             <p>Data de nascimento: 03/12/2005</p>
                                 <button id="editar">Editar Perfil</button>
-                                <div class="formulario" id="editarFormulario" style="display:none;">
-                                        <label for="foto">Foto de Perfil:</label>
-                                        <input type="file" id="foto" accept="image/*">
+                                <form action="#" enctype="multipart/form-data" id="formulario" style="display:none;">
                                         
                                         <label for="dataNascimento">Data de Nascimento:</label>
-                                        <input type="date" id="dataNascimento">
+                                        <input type="date" id="dataNascimento" name="dataNascimento">
                                         
                                         <label for="localizacao">Localização:</label>
-                                        <input type="text" id="localizacao">
-                                </div>
+                                        <input type="text" id="localizacao" name="localizacao">
+
+                                        <label for="pix">Insira aqui seu PIX:</label>
+                                        <input type="text" id="pix" name="pix">
+
+                                        <button id="salvar">Salvar</button>
+                                        <button id="fecharFormulario">Fechar</button>
+                                </form>
                         </div>
                     </div>
                     <div class="redes">
@@ -79,6 +83,6 @@
         </div>
     </div>
 </body>
-<script src="scriptI.js"></script>
+<script src="scriptInstituicao.js"></script>
 
 </html>
