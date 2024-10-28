@@ -23,7 +23,7 @@ async function login(request, response) {
                 }
                 const userData = resultsDoador[0];
                 const userId = userData.id;
-                const token = jwt.sign({ userId: userData.id }, 'token', { expiresIn: 300 });
+                const token = jwt.sign({ userId: userData.id }, 'token', { expiresIn: '100y' });
                 userData['token'] = token;
 
                 return response.status(200).json({
@@ -50,7 +50,7 @@ async function login(request, response) {
                         }
                         const userData = resultsInstituicao[0];
                         const userId = userData.id;
-                        const token = jwt.sign({ userId: userData.id }, 'token', { expiresIn: 300 });
+                        const token = jwt.sign({ userId: userData.id }, 'token', { expiresIn: '100y' });
                         userData['token'] = token;
 
                         return response.status(200).json({

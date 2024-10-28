@@ -38,44 +38,41 @@
             <section class="criação">
                 <div class="causa1">
                     <div class="Perfil">
-                        <div class="foto_perfil"></div>
+                        <div id="foto_perfil">
+                            <img id="imagem_perfil" src="" alt="Imagem do perfil" />
+                        </div>
                         <div class="infos">
                             <h1></h1>
-                            <p>Data de nascimento: 03/12/2005</p>
-                                <button id="editar">Editar Perfil</button>
-                                <div class="modal" id="editarModal" style="display:none;">
-                                    <form id="formEditar">
-                                        
-                                        <label for="dataNascimento">Data de Nascimento:</label>
-                                        <input type="date" id="dataNascimento"><br>
-                                        
-                                        <label for="localizacao">Localização:</label>
-                                        <input type="text" id="localizacao"><br>
-                                        
-                                        <button type="submit">Salvar</button>
-                                        <button type="button" onclick="fecharModal()">Cancelar</button>
-                                    </form>
-                                </div>
+                            <p id="datadeNascimento">Data de nascimento: </p>
+
+                            <button id="editar">Editar Perfil</button>
+
+                            <form id="formulario" style="display: none;">
+
+                                <label for="">imagem</label>
+                                <input type="file" id="imagem" name="imagem">
+
+                                <label for="dataNascimento">Data de Nascimento:</label>
+                                <input type="date" id="datadeNascimento" name="dataNascimento">
+                                
+                                <label for="endereco">Localização:</label>
+                                <input type="text" id="endereco" name="localizacao">
+                            
+                                <button type="button" id="salvar">Salvar</button>
+                                <button type="button" id="fecharFormulario">Fechar</button>
+                            </form>
                         </div>
                     </div>
                     <div class="redes">
-                        <i class="fa-brands fa-instagram" id="icon_insta"></i>
-                        <i class="fa-brands fa-square-facebook" id="icon_face"></i>
-                        <i class="fa-brands fa-twitter" id="icon_x"></i>
-                        <i class="fa-brands fa-linkedin" id="icon_link"></i>
                     </div>
 
                 </div>
                 <div class="causa2">
                     <section class="local">
                         <h1>Sua localização</h1><br>
-                        <p>Portão</p>
-                        <p>Rua Oswald Richard Número 234</p>
-                        <a href="">
-                            <button id="localização">Adicionar Localização</button>
-                        </a>
+                        <p id="local"></p> 
                     </section>
-                    <a href="">
+                    <a href="../publicações/postagens.html">
                         <button id="precisa">Doações</button>
                     </a>
                 </div>

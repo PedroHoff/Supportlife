@@ -12,20 +12,28 @@ button.onclick = async function() {
     });
 
     let content = await response.json();
-
+ 
     if (content.success) {
         alert('Usuário logado!');
-        localStorage.setItem('user', JSON.stringify(content.data));
-        console.log(content.data.nome)
-        localStorage.setItem('nome', content.data.nome);
-
-        if(content.tipo == 'doador')
-            window.location.href = "../perfil doador/principal_usuário.html";
-        else
-            window.location.href = "../perfil_instituicao/principal_instituicao.html";
-
         
-            document.addEventListener('DOMContentLoaded', () => {
+        // Armazena as informações do usuário no localStorage
+        localStorage.setItem('user', JSON.stringify(content.data));
+        console.log(content.data.nome);
+
+        // Armazena o nome do usuário
+        localStorage.setItem('nome', content.data.nome);
+        
+        // Armazena o token retornado pelo servidor
+        localStorage.setItem('token', content.data.token); // Mudei de data.token para content.data.token
+
+        // Redireciona para a página apropriada
+        if(content.tipo === 'doador') {
+            window.location.href = "../perfil doador/principal_usuário.html";
+        } else {
+            window.location.href = "../perfil_instituicao/principal_instituicao.html";
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
             // Recupera o nome do usuário armazenado
             const nomeUsuario = localStorage.getItem('nome');    
             
@@ -36,10 +44,7 @@ button.onclick = async function() {
                 console.log('Usuário não logado');
             }
         });
-        
-        
-    }else{
+    } else {
         alert('Informações inválidas!');
     }
-
 };

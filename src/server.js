@@ -23,7 +23,8 @@ const cadastro1Router = require('./routes/cadastro1Router');
 const cadastro2Router = require('./routes/cadastro2Router');
 const loginRouter = require('./routes/loginRouter');
 const postarRouter = require('./routes/postarRouter');
-const perfilRouter = require('./routes/perfilRouter');
+const instituicaoRouter = require('./routes/instituicaoRouter');
+const doadorRouter = require('./routes/doadorRouter');
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 app.use(express.json())
@@ -32,6 +33,8 @@ app.use('/api', postarRouter);
 app.use('/api', cadastro1Router);
 app.use('/api', cadastro2Router);
 app.use('/api', loginRouter);
+app.use('/api', instituicaoRouter);
+app.use('/api', doadorRouter);
 
 
 app.listen(port, () => console.log(`Run on port ${port}!`))

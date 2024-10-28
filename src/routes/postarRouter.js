@@ -1,10 +1,12 @@
 const { Router } = require('express');
 const router = Router();
 
-const { storePostar, getPostar } = require('../controller/postarController');
+const { storePostar, getPostar, getPostarById} = require('../controller/postarController');
 
 router.post('/store/postar', storePostar);
-router.get('/get/postar', getPostar),
+router.get('/get/postar', getPostar);
+
+router.get('/get/postar/detalhes/:id', getPostarById);
 
 module.exports = router;
 
