@@ -4,9 +4,9 @@ button.onclick = async function() {
     event.preventDefault();
     let form = document.getElementById("formulario");
     let dadosForm = new FormData(form);
-    let usuario = JSON.parse(localStorage.getItem('user'));
-    
-    dadosForm.append('userId', usuario.id)
+    let usuarioId = localStorage.getItem('userId');
+
+    dadosForm.append('userId', usuarioId);
 
     const response = await fetch('http://localhost:3000/api/store/postar', {
         method: "POST",

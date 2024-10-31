@@ -19,19 +19,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             const infoDiv = document.createElement('div');
             infoDiv.className = 'info';
 
-            const titulo = document.createElement('h1');
+            const titulo = document.createElement('h3');
             titulo.textContent = postar.titulo;
-
-            const causa = document.createElement('p');
-            causa.textContent = postar.causa;
-
-            const necessidade = document.createElement('p');
-            necessidade.textContent = postar.necessidade;
 
             // Adicionando elementos ao infoDiv e ao card
             infoDiv.appendChild(titulo);
-            infoDiv.appendChild(causa);
-            infoDiv.appendChild(necessidade);
             
             card.appendChild(img);
             card.appendChild(infoDiv);

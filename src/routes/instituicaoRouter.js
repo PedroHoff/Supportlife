@@ -2,17 +2,24 @@ const { Router } = require('express');
 const router = Router();
 const { storeInstituicao, getInstituicao } = require('../controller/instituicaoController'); 
 
-// Rota para criar ou atualizar o perfil da instituição
-router.post('/store/instituicao', storeInstituicao);
+// Rota para criar ou atualizar o perfil da instituição com o ID
+router.post('/store/instituicao/:userId', storeInstituicao);
 
-// Rota para buscar os dados da instituição
-router.get('/store/instituicao', getInstituicao); // Mantenha o mesmo caminho para POST e GET
+// Rota para buscar os dados da instituição com o ID
+router.get('/store/instituicao/:userId', getInstituicao); 
 
 /**
  * @swagger
- * /store/instituicao:
+ * /store/instituicao/{userId}:
  *  get:
  *    summary: Retorna os dados da instituição
+ *    parameters:
+ *      - name: userId
+ *        in: path
+ *        required: true
+ *        description: O ID da instituição
+ *        schema:
+ *          type: string
  *    responses:
  *      200:
  *        description: Os dados do perfil da instituição
@@ -31,17 +38,26 @@ router.get('/store/instituicao', getInstituicao); // Mantenha o mesmo caminho pa
  */
 /**
  * @swagger
- * /store/instituicao:
+ * /store/instituicao/{userId}:
  *  post:
- *    summary: Retorna os dados da instituição
+ *    summary: Atualiza os dados da instituição
+ *    parameters:
+ *      - name: userId
+ *        in: path
+ *        required: true
+ *        description: O ID da instituição
+ *        schema:
+ *          type: string
  *    responses:
  *      200:
- *        description: Os dados do perfil da instituição
+ *        description: Os dados do perfil da instituição atualizados
  *        content:
  *          application/json:
  *            schema:
  *              type: object
  *              properties:
+ *                success:
+ *                  type: boolean
  *                data:
  *                  type: object
  *                  properties:

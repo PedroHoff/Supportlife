@@ -11,13 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Função para buscar e exibir os dados da instituição
     const fetchInstituicaoData = async () => {
-        const token = JSON.parse(localStorage.getItem('user')).token;
+        const userId = localStorage.getItem('userId'); 
         try {
-            const response = await fetch('http://127.0.0.1:3000/api/store/instituicao', {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${token}` 
-                }
+            const response = await fetch(`http://127.0.0.1:3000/api/store/instituicao/${userId}`, {
+                method: 'GET'
             });
 
             if (!response.ok) {
@@ -26,31 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const result = await response.json();
             if (result.success) {
-
-                // se sucesso, ele irá exibir os dados na tela nos IDs corretos
-
-                const dataNascimentoOriginal = result.data.dataNascimento.split('T')[0]; // Pega a data e faz um split no T para não aparecer o tempo com a data
-                
-
-                // Converte para o formato dia-mês-ano
+                const dataNascimentoOriginal = result.data.dataNascimento.split('T')[0];
                 const dataNascimento = new Date(dataNascimentoOriginal);
                 const dia = String(dataNascimento.getDate() + 1).padStart(2, '0');
-                const mes = String(dataNascimento.getMonth() + 1).padStart(2, '0'); // Lembre-se de adicionar 1 ao mês
+                const mes = String(dataNascimento.getMonth() + 1).padStart(2, '0');
                 const ano = dataNascimento.getFullYear();
-
-                // Formato dia-mês-ano
                 const dataFormatada = `${dia}-${mes}-${ano}`;
 
-                // Exibe a datadenascimento
-                const elementoDataNascimento = document.getElementById('datadeNascimento');
-                elementoDataNascimento.textContent += ` ${dataFormatada}`; // Pega o que estava escrito por padrão no lugar e acrescenta a data
-
-                // Exibe a localização
-                document.getElementById('local').textContent = result.data.localizacao; // Exibe localização
-
-
-                document.getElementById('imagem_perfil').img.src = `url('http://localhost:3000/uploads/${instituicao.imagem}')`;
-
+                document.getElementById('datadeNascimento').textContent += ` ${dataFormatada}`;
+                document.getElementById('local').textContent = result.data.localizacao;
+                document.getElementById('foto_perfil').style.backgroundImage = `url('http://localhost:3000/uploads/${result.data.imagem}')`;
             }
         } catch (error) {
             console.error('Erro ao buscar os dados do perfil:', error);
@@ -61,17 +43,27 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchInstituicaoData();
 
     // Exibe o formulário ao clicar no botão "Editar"
-    document.getElementById('editar').addEventListener('click', () => {
-        document.getElementById('formulario').style.display = 'block'; // Exibe o formulário
-    });
+    const editarButton = document.getElementById('editar');
+    if (editarButton) {
+        editarButton.addEventListener('click', () => {
+            document.getElementById('formulario').style.display = 'block'; // Exibe o formulário
+        });
+    } else {
+        console.log('Botão "Editar" não encontrado');
+    }
 
     // Oculta o formulário ao clicar no botão "Fechar"
-    document.getElementById('fecharFormulario').addEventListener('click', () => {
-        document.getElementById('formulario').style.display = 'none'; // Oculta o formulário
-    });
+    const fecharButton = document.getElementById('fecharFormulario');
+    if (fecharButton) {
+        fecharButton.addEventListener('click', () => {
+            document.getElementById('formulario').style.display = 'none'; // Oculta o formulário
+        });
+    } else {
+        console.log('Botão "Fechar" não encontrado');
+    }
 
     // Função para salvar os dados do perfil
-    let button = document.getElementById("salvar");
+    const button = document.getElementById("salvar");
 
     // Verifique se o botão está presente
     if (button) {
@@ -87,29 +79,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 dadosForm.set('dataNascimento', dataAjustada); // Substitui no FormData
             }
 
-            // Recupera o token armazenado no localStorage
-            const token = JSON.parse(localStorage.getItem('user')).token;
+            const userId = localStorage.getItem('userId'); // Recupera o ID do usuário
 
-            const response = await fetch('http://127.0.0.1:3000/api/store/instituicao', {  
-                method: "POST",
-                body: dadosForm,
-                headers: {
-                    'Authorization': `Bearer ${token}`  // Inclui o token no cabeçalho
+            try {
+                const response = await fetch(`http://127.0.0.1:3000/api/store/instituicao/${userId}`, {
+                    method: "POST",
+                    body: dadosForm
+                });
+                
+                if (!response.ok) {
+                    const errorText = await response.text(); // Captura a resposta como texto
+                    console.error('Erro ao atualizar o perfil:', response.status, errorText);
+                    alert("Erro ao atualizar o perfil: " + response.status);
+                    return; // Retorna para evitar continuar com o processamento
                 }
-            });
-            
-            let content = await response.json();
-    
-            if (content.success) {
-                alert("Perfil atualizado com sucesso!");
-                document.getElementById('formulario').style.display = 'none'; // Fecha o formulário após salvar
-                location.reload();
-                // Após salvar, busca os dados atualizados para exibir
-                fetchInstituicaoData();
-            } else {
-                alert("Erro ao atualizar o perfil");
-                console.log(content.error);
+                
+                let content = await response.json();
+                
+                if (content.success) {
+                    alert("Perfil atualizado com sucesso!");
+                    document.getElementById('formulario').style.display = 'none'; // Fecha o formulário após salvar
+                    fetchInstituicaoData(); // Busca dados atualizados
+                    location.reload();
+                } else {
+                    alert("Erro ao atualizar o perfil");
+                    console.log(content.error);
+                }
+                
+            } catch (error) {
+                console.error('Erro ao atualizar o perfil:', error);
             }
-        };        
+        };
+    } else {
+        console.log('Botão "Salvar" não encontrado');
     }
 });

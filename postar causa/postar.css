@@ -1,162 +1,59 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
+/* Estilos gerais do corpo */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f3f3f3;
     margin: 0;
-}
-
-/* NAVBAR */
-
-nav h1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 14vh;
-    font-weight: 300;
-    font-size: 30px;
-    font-style: italic;
-}
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-}
-#formulario{
-    display: flex;
-    height: 55vh;
-    width: 120vh;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-}
-/* SECTION 1 */
-
-.section-1{
-
-    background-image: url(../imagens/background\ publica.png);
-    width: 150vh;
-    height: 70vh;
-    border-radius: 15px;
-    padding: 15px;
-    flex-direction: column;
-    justify-content: center;
-   
-/* Publicação */
-}
-.campanha{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 100px;
-
-}
-.campanha h1{
-    font-size: larger;
-    color: white;
-    font-weight: 550;
-    padding-left: 10px;
-    padding-top: 10px;
-}
-#postar{
-    background-color: #003015;
-    color: white;
-    border-radius: 15px;
-    height: 60px;
-    width: 120px;
-    border:none;
-    font-size: 15px;
-    font-weight: 300px;
-
-}
-#voltar{
-  height: 50px;  
-  width: 100px;
-  border: none;
-  border-radius: 15px;
-
-}
-.criação{
-    display: flex;
-
-    justify-content: space-around;
-    height: 80%;
-    width: 100%;
-}
-.causa1{
-    height: 90%;
-    width: 40%;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 15px;
-}
-.causa1 h1{
     padding: 20px;
-    font-weight: 300;
-}
-.causa1 input{
-    height: 80%;
-    width: 80%;
-}
-input{
-    width: 200px;
-    height: 50px;
-    border-radius: 15px;
-    border: solid 1px;
-    padding-left: 5px;
-}
-
-
-
-.causa2{
-    display: flex;
-    height: 45vh;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: transparent;
-}
-.imagem_causa{
-    display: flex;
-    background-color: white;
-    height: 200px;
-    width: 550px;
-    border-radius: 15px;
-    border: none;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-}
-.imagem_causa button{
-    height: 150px;
-    width: 250px;
-    font-size: 80px;
-    color: #424242;
-    border-radius: 15px;
-    border: solid 1px;
-    background-color: rgb(212, 212, 212);
-}
-.precisa{
-    background-color: white;
-    height: 270px;
-    width: 550px;
-    border: none;
-    border-radius: 15px;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
+    padding: 20vh;
 }
-.precisa h1{
-    font-weight: 300;
+
+/* Estilos do formulário */
+#formulario {
+    width: 40vh;
+    height: 50vh;
+    background: #0e504c;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    max-width: 500px;
+    margin: 0 auto; /* Centraliza o formulário */
 }
-.precisa input{
-    height: 150px;
-    width: 450px;
+
+/* Estilo dos rótulos */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Estilo dos inputs */
+input[type="file"],
+input[type="text"] {
+    width: 90%; /* Ocupa toda a largura do formulário */
+    padding: 10px;
+    border: 1px solid #ddd; /* Borda clara */
+    border-radius: 4px; /* Bordas arredondadas */
+    margin-bottom: 20px; /* Espaço abaixo do input */
+    font-size: 16px;
+}
+
+/* Estilo do botão */
+button {
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white; /* Texto branco */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px; /* Espaço interno */
+    font-size: 16px;
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    transition: background-color 0.3s; /* Transição suave para cor de fundo */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+button:hover {
+    background-color: #45a049; /* Verde mais escuro ao passar o mouse */
 }

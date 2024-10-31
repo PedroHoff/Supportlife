@@ -173,9 +173,9 @@ input{
     height: 27vh;
     width: 27vh;
     border-radius: 150px;
-    background-image: url();
-    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -193,6 +193,7 @@ input{
     flex-direction: column;
     padding: 10px;
 }
+
 .infos p{
     font-size: 20px;
     font-weight: 100;
@@ -200,8 +201,8 @@ input{
     color: white;
 }
 .infos h1{
-    font-size: 45px;
-    font-weight: bold;
+    font-size: 30px;
+    font-weight: 500;
     color: white;
 }
 #editar{
@@ -240,13 +241,14 @@ input{
     box-shadow: 5px 7px 5px 5px lightgrey;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 .local h1{
+    font-size: 60px;
     color: white;
 }
 .local p{
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 100;
     font-family: 'Franklin Gothic Medium';
     color: white;

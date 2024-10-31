@@ -1,7 +1,6 @@
 const connection = require('../config/db');
 require("dotenv").config();
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 
 async function login(request, response) {
     const queryDoador = "SELECT * FROM cadastro_doador WHERE `email` = ?";
@@ -22,15 +21,15 @@ async function login(request, response) {
                     return response.status(400).send({ msg: 'Email ou senha incorretos!' });
                 }
                 const userData = resultsDoador[0];
-                const userId = userData.id;
-                const token = jwt.sign({ userId: userData.id }, 'token', { expiresIn: '100y' });
-                userData['token'] = token;
+                const doadorId = userData.id;
+                delete userData.senha; // Remover a senha do objeto
 
                 return response.status(200).json({
                     success: true,
                     message: 'Sucesso! Usuário conectado.',
                     data: userData,
-                    tipo: 'doador'
+                    tipo: 'doador',
+                    doadorId // Retorna o userId
                 });
             });
         } else {
@@ -50,13 +49,13 @@ async function login(request, response) {
                         }
                         const userData = resultsInstituicao[0];
                         const userId = userData.id;
-                        const token = jwt.sign({ userId: userData.id }, 'token', { expiresIn: '100y' });
-                        userData['token'] = token;
+                        delete userData.senha; // Remover a senha do objeto
 
                         return response.status(200).json({
                             success: true,
                             message: 'Sucesso! Usuário conectado.',
-                            data: userData
+                            data: userData,
+                            userId // Retorna o userId
                         });
                     });
                 } else {
