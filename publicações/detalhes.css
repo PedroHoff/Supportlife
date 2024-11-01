@@ -19,10 +19,19 @@ body {
     height: 90vh;
     width: 130vh;
     background-color: white;
-    border: solid 8px, rgb(61, 61, 61);
     border-radius: 20px;
 }
-
+.voltar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 79.5%;
+    width: 10vh;
+    background-color: rgb(18, 129, 92);
+    border: none;
+    font-size: larger;
+}
 /* fotos e informações */
 .div1{
     background-color: #ffffff;
@@ -31,14 +40,14 @@ body {
     align-items: center;
     height: 71.5vh;
     width: 60vh;
-    border: solid 8px, rgb(0, 0, 0);
+    border: solid 8px, rgb(146, 146, 146);
 }
 /* mexer só na foto */
 .foto{ 
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(179, 179, 179);
     width: 58.5vh;
     height: 40vh;
 }
@@ -54,12 +63,50 @@ body {
     width: 30vh;
     padding: 10px;
     flex-direction: column;
-    border: solid 8px, rgb(0, 0, 0);
+    border: solid 8px, rgb(146, 146, 146);
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     color: #ffffff;
+}
+.dinheiro{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.dinheiro h1{
+    font-size: 25px;
+    text-align: center;
+}
+.pix{
+    color: rgb(26, 250, 26);
+}
+.hr{
+    border: solid;
+    color: white;
+    width: 100%;
+    border-radius: 15px;
+}
+
+ /* necessidade */
+
+.necessidade{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.necessidade h1{
+    font-size: 20px;
+    text-align: center;
+}
+.necessidade p{
+    font-size: larger;
+    color: rgb(9, 255, 0);
 }
 .infos{
  display: flex;
@@ -80,9 +127,17 @@ width: 58.5vh;
 }
 .informacoes{
     display: flex;
-    justify-content: space-evenly;
     flex-direction: column;
+    align-items: center;
     width: 58.5vh;
     height: 100%;
     padding: 10px;
+}
+.causa{
+    text-align: justify;
+}
+.entenda {
+    background-color: aqua;
+    justify-content: center;
+    align-items: center;
 }

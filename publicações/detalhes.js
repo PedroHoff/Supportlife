@@ -8,9 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 if (data.success) {
                     const detalhesMain = document.getElementById("detalhes");
-                    detalhesMain.innerHTML = `
+                    detalhesMain.innerHTML =
+                    `
                     <div class="detalhes">
-                        <button class="voltar"></button>
+                        <button id="voltar" class="voltar"> Voltar </button>
                         <div class="div1">
                             <div class="foto">
                                 <img class="img" src="http://localhost:3000/uploadsPOSTAGEM/${data.data.img}">
@@ -18,24 +19,41 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="infos">
                                 <div class="titulo">
                                     <h1>${data.data.titulo}</h1>
-                                    <p><b></b>${data.data.nome}</p> <br>
+                                    <p><b></b>${data.data.nome}</p>
+                                    <p><b></b> ${data.data.localizacao}</p>
                                 </div>
                                 <div class="informacoes">
-                                <p><b>Localização:</b> ${data.data.localizacao}</p>
-                                <p><b>Entenda a causa:</b> ${data.data.causa}</p>
+                                    <p> <b>Entenda a causa:</b></p>
+                                    <p class="causa"> ${data.data.causa}</p>
                                 </div>                                                 
                             </div>
                         </div>
                         <div class="div2">
-                        <p><b>Como você pode ajudar:</b> ${data.data.necessidade}</p>
-                        <p><b>PIX:</b> ${data.data.pix}</p>
+                            <div class="dinheiro">
+                                <h1><b>Aceitamos doações em dinheiro via:</h1><br></b>
+                                <p class="pix"><b>PIX:</b><br></p>
+                                <p> ${data.data.pix} </p>
+                                <br><br>
+                                <hr class="hr">
+                            </div>
+                            <div class="necessidade">
+                                <h1>Você também pode nos ajudar com: </h1><br>
+                                <p> ${data.data.necessidade}</p>
+                            </div>
                         </div>
                     </div>
                     `;
+
+                    // Adiciona o evento para o botão de voltar
+                    document.getElementById("voltar").addEventListener("click", function() {
+                        window.history.back();
+                    });
+
                 } else {
                     const detalhesMain = document.getElementById("detalhes");
                     detalhesMain.innerHTML = `Não há detalhes disponíveis.`;
                 }
+
             })
             .catch(error => {
                 console.error("Erro ao buscar os detalhes:", error);

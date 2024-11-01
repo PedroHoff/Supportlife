@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const response = await fetch('http://localhost:3000/api/get/postar');
     const result = await response.json();
 
+    document.getElementById("voltar").addEventListener("click", function() {
+        window.history.back();
+    });
     if(result.success) {
         const postagensList = document.querySelector('.postagens-list');
         result.data.forEach(postar => {  // Variável 'postar' em vez de 'post'
