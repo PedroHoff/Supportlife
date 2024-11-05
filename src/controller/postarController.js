@@ -21,7 +21,7 @@ async function storePostar(request, response) {
     }
 
     // Verifique se a instituição existe e obtenha os dados necessários
-    const instituicaoQuery = "SELECT nome, localizacao, pix FROM instituicao WHERE id = ?"; // Você deve passar o id da instituição
+    const instituicaoQuery = "SELECT nome, localizacao, pix, Facebook, Instagram, Twitter, LinkedIn FROM instituicao WHERE id = ?"; // Você deve passar o id da instituição
     connection.query(instituicaoQuery, [userId], (err, instituicaoResults) => { // Aqui, você deve passar o id correto da instituição
         if (err) {
             return response.status(500).json({
@@ -38,7 +38,7 @@ async function storePostar(request, response) {
             });
         }
 
-        const { nome, localizacao, pix } = instituicaoResults[0];
+        const { nome, localizacao, pix, Facebook, Instagram, Twitter, LinkedIn  } = instituicaoResults[0];
 
         // Continue com o upload da imagem
         if (!request.files || !request.files.img) {
@@ -67,10 +67,14 @@ async function storePostar(request, response) {
                 request.body.necessidade,
                 nome,
                 localizacao,
-                pix
+                pix,
+                Facebook,
+                Instagram, 
+                Twitter, 
+                LinkedIn
             ];
 
-            const query = "INSERT INTO publicacao(userId, img, titulo, causa, necessidade, nome, localizacao, pix) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+            const query = "INSERT INTO publicacao(userId, img, titulo, causa, necessidade, nome, localizacao, pix, Facebook, Instagram, Twitter, LinkedIn) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             connection.query(query, params, (err, results) => {
                 if (results) {

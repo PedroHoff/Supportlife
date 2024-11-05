@@ -90,7 +90,43 @@ body{
     padding: 20px;
     font-weight: 300;
 }
+.redes {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 10vh;
+    width: 85vh;
+    background-color: #ffffff;
+}
+
+/* Estilo para cada link de ícone */
+.redes a {
+    font-size: 8vh; /* Define o tamanho do ícone dentro do link */
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+
+/* Estilos específicos para cada ícone */
+#link_instagram i {
+    color: #E1306C;
+}
+
+#link_facebook i {
+    color: #4267B2;
+}
+
+#link_twitter i {
+    color: #1DA1F2;
+}
+
+#link_linkedin i {
+    color: #0e76a8;
+}
+.redes a:hover i {
+    opacity: 0.9;
+}
+
 /* Estilo do Modal (Formulário) */
+
 #formulario {
     background-color: #fff;
     padding: 20px;

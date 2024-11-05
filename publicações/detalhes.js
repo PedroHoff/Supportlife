@@ -10,6 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     const detalhesMain = document.getElementById("detalhes");
                     detalhesMain.innerHTML =
                     `
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Detalhes da Instituição</title>
+                        <!-- Link para Font Awesome -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+                        <link rel="stylesheet" href="detalhes.css"> 
+                    </head>
                     <div class="detalhes">
                         <button id="voltar" class="voltar"> Voltar </button>
                         <div class="div1">
@@ -33,12 +41,22 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <h1><b>Aceitamos doações em dinheiro via:</h1><br></b>
                                 <p class="pix"><b>PIX:</b><br></p>
                                 <p> ${data.data.pix} </p>
-                                <br><br>
-                                <hr class="hr">
-                            </div>
-                            <div class="necessidade">
+                                <br> 
+                                
                                 <h1>Você também pode nos ajudar com: </h1><br>
                                 <p> ${data.data.necessidade}</p>
+
+                            </div>
+                            <div class="necessidade">
+
+                                <div class="redes">
+                                <h1>Você pode nos seguir nas nossas redes sociais:</h1>
+                                <a href="${data.data.Facebook}" target="_blank" id="link_facebook"><i class="fa-brands fa-square-facebook"></i></a>
+                                <a href="${data.data.Instagram}" target="_blank" id="link_instagram"><i class="fa-brands fa-instagram"></i></a>                              
+                                <a href="${data.data.Twitter}" target="_blank" id="link_twitter"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="${data.data.LinkedIn}" target="_blank" id="link_linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>

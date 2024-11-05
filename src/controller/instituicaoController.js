@@ -20,10 +20,10 @@ async function storeInstituicao(request, response) {
 
     // Obtendo o userId diretamente dos parâmetros da URL
     const { userId } = request.params; 
-    const { dataNascimento, localizacao, pix } = request.body; 
+    const { dataNascimento, localizacao, pix, Facebook, Instagram, Twitter, LinkedIn} = request.body; 
 
-    const query = "UPDATE instituicao SET imagem = ?, dataNascimento = ?, localizacao = ?, pix = ? WHERE id = ?";
-    const params = [imagemNome, dataNascimento, localizacao, pix, userId];
+    const query = "UPDATE instituicao SET imagem = ?, dataNascimento = ?, localizacao = ?, pix = ?, Facebook = ?, Instagram = ?, Twitter = ?, LinkedIn = ? WHERE id = ?";
+    const params = [imagemNome, dataNascimento, localizacao, pix, Facebook, Instagram, Twitter, LinkedIn, userId];
 
     connection.query(query, params, (err, results) => {
         if (err) {
@@ -36,7 +36,7 @@ async function storeInstituicao(request, response) {
         return response.status(200).json({
             success: true,
             message: 'Perfil atualizado com sucesso',
-            data: { dataNascimento, localizacao, pix, imagem: imagemNome }
+            data: { dataNascimento, localizacao, pix, Facebook, Instagram, Twitter, LinkedIn, imagem: imagemNome }
             
         });
     });
@@ -47,7 +47,7 @@ async function getInstituicao(request, response) {
     // Obtendo o userId diretamente dos parâmetros da URL
     const { userId } = request.params; 
 
-    const query = "SELECT nome, imagem, dataNascimento, localizacao, pix FROM instituicao WHERE id = ?";
+    const query = "SELECT nome, imagem, dataNascimento, localizacao, pix, Facebook, Instagram, Twitter, LinkedIn FROM instituicao WHERE id = ?";
     const params = [userId];
     
     connection.query(query, params, (err, results) => {

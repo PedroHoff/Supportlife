@@ -18,7 +18,7 @@ async function storeDoador(request, response) {
     }
 
     const { doadorId } = request.params; // Captura o ID do doador a ser atualizado
-    const { dataNascimento, localizacao } = request.body; // Captura os dados do formulário
+    const { dataNascimento, localizacao, Facebook, Instagram, Twitter, LinkedIn } = request.body; // Captura os dados do formulário
 
     // Verifica se o ID e os dados foram enviados corretamente
     if (!doadorId || !dataNascimento || !localizacao) {
@@ -28,8 +28,8 @@ async function storeDoador(request, response) {
         });
     }
 
-    const query = "UPDATE cadastro_doador SET imagem = ?, dataNascimento = ?, localizacao = ? WHERE id = ?";
-    const params = [imagemNome, dataNascimento, localizacao, doadorId]; // Use doadorId aqui
+    const query = "UPDATE cadastro_doador SET imagem = ?, dataNascimento = ?, localizacao = ?, Facebook = ?, Instagram = ?, Twitter = ?, LinkedIn = ? WHERE id = ?";
+    const params = [imagemNome, dataNascimento, localizacao, Facebook, Instagram, Twitter, LinkedIn, doadorId]; // Use doadorId aqui
 
     connection.query(query, params, (err, results) => {
         if (err) {
@@ -43,7 +43,7 @@ async function storeDoador(request, response) {
         return response.status(200).json({
             success: true,
             message: 'Perfil atualizado com sucesso',
-            data: { dataNascimento, localizacao, imagem: imagemNome }
+            data: { dataNascimento, localizacao, Facebook, Instagram, Twitter, LinkedIn, imagem: imagemNome }
         });
     });
 }
@@ -51,7 +51,7 @@ async function storeDoador(request, response) {
 async function getDoador(request, response) {
     const { doadorId } = request.params; // Captura o ID do doador
 
-    const query = "SELECT nome, imagem, dataNascimento, localizacao FROM cadastro_doador WHERE id = ?";
+    const query = "SELECT nome, imagem, dataNascimento, localizacao, Facebook, Instagram, Twitter, LinkedIn FROM cadastro_doador WHERE id = ?";
     const params = [doadorId]; // Usa doadorId
 
     connection.query(query, params, (err, results) => {

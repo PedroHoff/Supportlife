@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const result = await response.json();
+
             if (result.success) {
+                const perfil = result.data;
                 const dataNascimentoOriginal = result.data.dataNascimento.split('T')[0];
                 const dataNascimento = new Date(dataNascimentoOriginal);
                 const dia = String(dataNascimento.getDate() + 1).padStart(2, '0');
@@ -33,7 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('datadeNascimento').textContent += ` ${dataFormatada}`;
                 document.getElementById('local').textContent = result.data.localizacao;
                 document.getElementById('foto_perfil').style.backgroundImage = `url('http://localhost:3000/uploads/${result.data.imagem}')`;
+
+                if (perfil.Instagram) document.getElementById('link_instagram').href = perfil.Instagram;
+                if (perfil.Facebook) document.getElementById('link_facebook').href = perfil.Facebook;
+                if (perfil.Twitter) document.getElementById('link_twitter').href = perfil.Twitter;
+                if (perfil.LinkedIn) document.getElementById('link_linkedin').href = perfil.LinkedIn;
+
+            } else {
+
+            console.error('Erro ao carregar o perfil:', data.message);
             }
+
         } catch (error) {
             console.error('Erro ao buscar os dados do perfil:', error);
         }
