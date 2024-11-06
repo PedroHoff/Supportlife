@@ -1,15 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const postarId = urlParams.get("id");
-
+    
     if (postarId) {
         fetch(`http://localhost:3000/api/get/postar/detalhes/${postarId}`)
             .then(response => response.json())
             .then(data => {
+                const detalhesMain = document.getElementById("detalhes");
                 if (data.success) {
-                    const detalhesMain = document.getElementById("detalhes");
-                    detalhesMain.innerHTML =
-                    `
+                    detalhesMain.innerHTML = `
                     <head>
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,36 +30,46 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <p><b></b> ${data.data.localizacao}</p>
                                 </div>
                                 <div class="informacoes">
-                                    <p> <b>Entenda a causa:</b></p>
-                                    <p class="causa"> ${data.data.causa}</p>
+                                    <p><b>Entenda a causa:</b></p>
+                                    <p class="causa">${data.data.causa}</p>
                                 </div>                                                 
                             </div>
                         </div>
                         <div class="div2">
                             <div class="dinheiro">
-                                <h1><b>Aceitamos doações em dinheiro via:</h1><br></b>
+                                <h1><b>Aceitamos doações em dinheiro via:</b></h1><br>
                                 <p class="pix"><b>PIX:</b><br></p>
-                                <p> ${data.data.pix} </p>
+                                <p>${data.data.pix}</p>
                                 <br> 
-                                
-                                <h1>Você também pode nos ajudar com: </h1><br>
-                                <p> ${data.data.necessidade}</p>
-
+                                <h1>Você também pode nos ajudar com:</h1><br>
+                                <p>${data.data.necessidade}</p>
                             </div>
                             <div class="necessidade">
-
                                 <div class="redes">
-                                <h1>Você pode nos seguir nas nossas redes sociais:</h1>
-                                <a href="${data.data.Facebook}" target="_blank" id="link_facebook"><i class="fa-brands fa-square-facebook"></i></a>
-                                <a href="${data.data.Instagram}" target="_blank" id="link_instagram"><i class="fa-brands fa-instagram"></i></a>                              
-                                <a href="${data.data.Twitter}" target="_blank" id="link_twitter"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="${data.data.LinkedIn}" target="_blank" id="link_linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                                    <h1>Você pode nos seguir nas nossas redes sociais:</h1>
+                                    <a href="${data.data.Facebook}" target="_blank" id="link_facebook"><i class="fa-brands fa-square-facebook"></i></a>
+                                    <a href="${data.data.Instagram}" target="_blank" id="link_instagram"><i class="fa-brands fa-instagram"></i></a>                              
+                                    <a href="${data.data.Twitter}" target="_blank" id="link_twitter"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="${data.data.LinkedIn}" target="_blank" id="link_linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                                    <br><br>
                                 </div>
-                                
+                                <button id="comprovante" style="display: none;">Enviar Comprovante</button>
                             </div>
                         </div>
                     </div>
                     `;
+
+                    // Verifica o tipo de usuário no localStorage
+                    const userType = localStorage.getItem('userType');
+                    if (userType === 'doador') {
+                        document.getElementById("comprovante").style.display = 'block'; // Mostra o botão
+                    } else {
+                        document.getElementById("comprovante").style.display = 'none'; // Esconde o botão
+                    }
+                    
+                    document.getElementById("comprovante").addEventListener("click", function() {
+                        window.location.href = "comprovante.html";
+                    });
 
                     // Adiciona o evento para o botão de voltar
                     document.getElementById("voltar").addEventListener("click", function() {
@@ -68,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
 
                 } else {
-                    const detalhesMain = document.getElementById("detalhes");
                     detalhesMain.innerHTML = `Não há detalhes disponíveis.`;
                 }
 

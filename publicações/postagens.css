@@ -52,7 +52,8 @@ body {
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px; /* Espaço entre os quadrados */
+    border-radius: 15px;
+    gap: 20px; 
 }
 .imagem-postagem{
     width: 27vh;

@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.log('Usuário não logado');
     }
+    document.getElementById("voltar").addEventListener("click", function() {
+        window.history.back();
+    });
 
     // Função para buscar e exibir os dados da instituição
     const fetchInstituicaoData = async () => {

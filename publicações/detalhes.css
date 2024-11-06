@@ -130,10 +130,10 @@ body {
  /* necessidade */
 
 .necessidade{
-    height: 30vh;
+    height: 35vh;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-around;
     align-items: center;
     
 }
@@ -163,18 +163,41 @@ width: 58.5vh;
     width: 58.5vh;
 }
 .informacoes{
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 58.5vh;
     height: 100%;
     padding: 10px;
+    width: 58.5vh;
+    max-width: 100%; /* Impede que o texto nas informações ultrapasse a largura */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
 }
 .causa{
     text-align: justify;
 }
-.entenda {
-    background-color: aqua;
+
+.causa, .necessidade p, .dinheiro h1, .titulo h1 {
+    overflow-wrap: break-word; /* Permite quebra de palavra */
+    word-wrap: break-word;
+    hyphens: auto; /* Divide as palavras em sílabas, se necessário */
+    max-width: 100%; /* Impede que o texto ultrapasse a largura do contêiner */
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+}
+
+#comprovante{
+    display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    height: 4vh;
+    width: 15vh;
+    background-color: rgb(18, 129, 92);
+    border: none;
+    font-size: larger;
+    border-radius: 15px;
+    font-size: small;
 }

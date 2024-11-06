@@ -24,8 +24,10 @@ button.onclick = async function() {
 
             // Armazena as informações do usuário no localStorage
             if (content.tipo === 'doador') {
+                localStorage.setItem('userType', 'doador'); // Armazenar o tipo de usuário
                 localStorage.setItem('doadorId', content.data.id); // ID do doador
             } else {
+                localStorage.setItem('userType', 'instituicao'); // Armazenar o tipo de usuário
                 localStorage.setItem('userId', content.data.id); // ID da instituição
             }
             localStorage.setItem('nome', content.data.nome);
