@@ -40,15 +40,15 @@ body {
     align-items: center;
     height: 71.5vh;
     width: 60vh;
-    border: solid 8px, rgb(146, 146, 146);
+    border: solid 8px, rgb(18, 129, 92);
 }
 /* mexer só na foto */
 .foto{ 
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(179, 179, 179);
-    width: 58.5vh;
+    background-color: rgb(255, 255, 255);
+    width: 57.5vh;
     height: 40vh;
 }
 .img{
@@ -63,7 +63,7 @@ body {
     width: 30vh;
     padding: 10px;
     flex-direction: column;
-    border: solid 8px, rgb(146, 146, 146);
+    border: solid 8px, rgb(18, 129, 92);
     display: flex;
     justify-content: space-around;
     align-items: center;

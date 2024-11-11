@@ -7,17 +7,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
     if(result.success) {
         const postagensList = document.querySelector('.postagens-list');
-        result.data.forEach(postar => {  // Variável 'postar' em vez de 'post'
+        result.data.forEach(postar => {  
             const card = document.createElement('div');
             card.className = 'causa-card';
 
             const img = document.createElement('img');
             img.src = `http://localhost:3000/uploadsPOSTAGEM/${postar.img}`;
             img.className = 'imagem-postagem';
-            img.style.cursor = "pointer"
+            img.style.cursor = "pointer";
             img.addEventListener('click', function () {
                 window.location.href =  `../publicações/detalhes.html?id=${postar.id}`;
-            })
+            });
 
             const infoDiv = document.createElement('div');
             infoDiv.className = 'info';
@@ -25,9 +25,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             const titulo = document.createElement('h3');
             titulo.textContent = postar.titulo;
 
-            // Adicionando elementos ao infoDiv e ao card
-            infoDiv.appendChild(titulo);
+            const nome = document.createElement('h4');
+            nome.textContent = postar.nome;
+
             
+            infoDiv.appendChild(titulo);
+            infoDiv.appendChild(nome);
+
             card.appendChild(img);
             card.appendChild(infoDiv);
 

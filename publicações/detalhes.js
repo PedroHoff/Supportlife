@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="infos">
                                 <div class="titulo">
                                     <h1>${data.data.titulo}</h1>
-                                    <p><b></b>${data.data.nome}</p>
-                                    <p><b></b> ${data.data.localizacao}</p>
+                                    <p>${data.data.nome}</p>
+                                    <p>${data.data.localizacao}</p>
                                 </div>
                                 <div class="informacoes">
                                     <p><b>Entenda a causa:</b></p>
@@ -53,23 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <a href="${data.data.LinkedIn}" target="_blank" id="link_linkedin"><i class="fa-brands fa-linkedin"></i></a>
                                     <br><br>
                                 </div>
-                                <button id="comprovante" style="display: none;">Enviar Comprovante</button>
                             </div>
                         </div>
                     </div>
                     `;
 
-                    // Verifica o tipo de usuário no localStorage
-                    const userType = localStorage.getItem('userType');
-                    if (userType === 'doador') {
-                        document.getElementById("comprovante").style.display = 'block'; // Mostra o botão
-                    } else {
-                        document.getElementById("comprovante").style.display = 'none'; // Esconde o botão
-                    }
-                    
-                    document.getElementById("comprovante").addEventListener("click", function() {
-                        window.location.href = "comprovante.html";
-                    });
 
                     // Adiciona o evento para o botão de voltar
                     document.getElementById("voltar").addEventListener("click", function() {

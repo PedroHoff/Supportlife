@@ -17,6 +17,7 @@ button.onclick = async function() {
 
     if(content.success){
         alert("Sucesso!")
+        window.location.href = "../login/entrar.html";
     } else {
         alert("Não deu certo!")
         console.log(content.sql)
