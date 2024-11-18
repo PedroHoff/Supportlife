@@ -1,5 +1,4 @@
-
-nav{
+nav {
     height: 10vh;
     width: 40vh;
     display: flex;
@@ -7,10 +6,12 @@ nav{
     flex-direction: row;
     align-items: center;
 }
-nav h1{
+
+nav h1 {
     color: rgb(0, 0, 0);
 }
-#voltar{
+
+#voltar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,30 +23,29 @@ nav h1{
     border: none;
     font-size: larger;
 }
+
 /* Estilos gerais do body */
 body {
     font-family: 'Quicksand', sans-serif;
-    background-color: #f3f3f3;
+    background-color: #ffffff;
     margin: 0;
-    padding: 20px;
+    height: 100vh; /* Ocupa a altura total da tela */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20vh;
     color: rgb(209, 209, 209);
 }
 
 /* Estilos do formulário */
 #formulario {
-    width: 40vh;
+    width: 40vh; /* Mantém largura fixa */
     height: 50vh;
     background: #0e504c;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     max-width: 500px;
-    margin: 0 auto; /* Centraliza o formulário */
 }
 
 /* Estilo dos rótulos */
@@ -53,29 +53,59 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
+    color: white;
 }
 
 /* Estilo dos inputs */
 input {
-    width: 90%; 
+    width: 90%;
     padding: 10px;
-    border: 1px solid #ddd; 
-    border-radius: 4px; 
+    border: 1px solid #ddd;
+    border-radius: 4px;
     margin-bottom: 20px;
     font-size: 16px;
 }
 
 /* Estilo do botão */
 button {
-    background-color: #4CAF50; 
-    color: white; 
+    background-color: #4CAF50;
+    color: white;
     border: none;
     border-radius: 4px;
-    padding: 10px 15px; 
+    padding: 10px 15px;
     font-size: 16px;
-    cursor: pointer; 
-    transition:  0.3s; /* Transição suave para cor de fundo */
+    cursor: pointer;
+    transition: 0.3s;
 }
+
 button:hover {
-    background-color: #45a049; 
+    background-color: #45a049;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #formulario {
+        width: 90%; /* Ajusta a largura para ocupar o máximo da tela */
+        height: auto; /* Permite altura dinâmica */
+    }
+
+    #voltar {
+        width: auto;
+        padding: 10px;
+        font-size: medium; /* Ajusta fonte para tamanhos menores */
+    }
+
+    input {
+        width: 80vw; /* Inputs ocupam toda a largura disponível */
+    }
+}
+
+@media (max-width: 480px) {
+    #formulario {
+        padding: 15px; /* Reduz padding em telas muito pequenas */
+    }
+
+    button {
+        font-size: 14px; /* Ajusta tamanho do botão */
+    }
 }

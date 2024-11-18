@@ -1,21 +1,21 @@
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-:root{
+:root {
     --verde-claro: #007432;
     --verde-forte: #005023;
     --verde-forte1: #003316;
 }
 
-body{
+body {
     font-family: "Montserrat", sans-serif;
 }
 
 /* NAVBAR */
 
-nav h1{
+nav h1 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,12 +24,11 @@ nav h1{
     font-weight: 300;
     font-size: 30px;
     font-style: italic;
-
 }
 
 /* SECTION 1 */
 
-.section-1{
+.section-1 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +37,7 @@ nav h1{
 
 /* CADASTRO */
 
-.cadastro{
+.cadastro {
     width: 500px;
     height: 700px;
     border-radius: 20px;
@@ -51,13 +50,12 @@ nav h1{
     gap: 90px;
 }
 
-.cadastro h1{
+.cadastro h1 {
     font-size: 27px;
-    font-weight:bold;
-
+    font-weight: bold;
 }
 
-.cadastro input{
+.cadastro input {
     color: var(--cinza);
     height: 50px;
     width: 420px;
@@ -68,48 +66,140 @@ nav h1{
     font-size: 22px;
     font-style: italic;
     background: transparent;
-
 }
-.cadastro button{
+
+.cadastro button {
     height: 45px;
     width: 140px;
     border-radius: 20px;
     border: none;
-    background-color:var(--verde-claro);
+    background-color: var(--verde-claro);
     color: aliceblue;
-    font-weight:bold;
+    font-weight: bold;
     font-size: 18px;
 }
-.cadastro button:hover{
+
+.cadastro button:hover {
     background-color: var(--verde-forte);
     color: white;
     transition: 100ms;
 }
 
-.cadastro button:active{
+.cadastro button:active {
     background-color: var(--verde-forte1);
 }
-.cadastro hr{
+
+.cadastro hr {
     height: 3px;
     background-color: #888888;
     display: block;
 }
-#icons{
-    color:#888888;
+
+#icons {
+    color: #888888;
     font-size: 21px;
     display: flex;
     justify-content: end;
     padding-left: 90px;
 }
-.cadastro h3{
+
+.cadastro h3 {
     font-size: 17px;
-     padding-right: 170px;
+    padding-right: 170px;
 }
-.cadastro h2{
+
+.cadastro h2 {
     padding-top: 20px;
     font-size: 17px;
-     padding-right: 170px;
+    padding-right: 170px;
 }
-.cadastro a{
+
+.cadastro a {
     color: #03B651;
+}
+
+
+@media (max-width: 768px) {
+    nav h1 {
+        font-size: 24px;
+    }
+
+    .cadastro {
+        display: flex;
+        justify-content: space-evenly;
+        width: 90%;
+        height: 700px;
+        padding: 15px;
+        gap: 50px;
+    }
+
+    .cadastro input {
+        width: 70vw;
+        font-size: 18px;
+        padding-top: 20px;
+    }
+
+    #icons {
+        color: #888888;
+        font-size: 21px;
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        padding-left: 90px;
+    }
+    
+    .cadastro button {
+        width: 100px;
+        font-size: 16px;
+    }
+
+    #icons {
+        padding-left: 10px;
+        justify-content: end;
+    }
+
+    .cadastro h3, .cadastro h2 {
+        font-size: 15px;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    nav h1 {
+        font-size: 20px;
+        height: 10vh;
+    }
+
+    .cadastro {
+        width: 90%;
+        padding: 10px;
+        gap: 30px;
+    }
+    
+
+    .cadastro h1 {
+        font-size: 24px;
+    }
+
+    .cadastro input {
+        font-size: 16px;
+        padding-top: 15px;
+    }
+
+    .cadastro button {
+        width: 30vw;
+        font-size: 14px;
+    }
+
+    #icons {
+        font-size: 18px;
+        padding-left: 0;
+        justify-content: end;
+    }
+
+    .cadastro h3, .cadastro h2 {
+        font-size: 14px;
+        padding-right: 0;
+        text-align: center;
+    }
 }

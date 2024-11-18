@@ -53,8 +53,8 @@ body{
 }
 .campanha{
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
+    justify-content: space-between;
     align-items: end;
     width: 100%;
     height: 100px;
@@ -68,6 +68,7 @@ body{
     padding-left: 10px;
     padding-top: 10px;
 }
+
 #voltar{
     display: flex;
     justify-content: center;
@@ -80,7 +81,6 @@ body{
     border: none;
     font-size: larger;
 }
-
 .criação{
     display: flex;
 
@@ -138,6 +138,7 @@ body{
 }
 
 /* Estilo do Modal (Formulário) */
+
 #formulario {
     background-color: #fff;
     padding: 20px;
@@ -240,6 +241,7 @@ input{
     flex-direction: column;
     padding: 10px;
 }
+
 .infos p{
     font-size: 20px;
     font-weight: 100;
@@ -290,10 +292,11 @@ input{
     justify-content: center;
 }
 .local h1{
+    font-size: 60px;
     color: white;
 }
 .local p{
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 100;
     font-family: 'Franklin Gothic Medium';
     color: white;
@@ -325,5 +328,118 @@ input{
 }
 a{
     text-decoration: none;
+}
+/* Seu CSS original permanece inalterado acima deste ponto */
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    .perfil {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .div1 {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .campanha {
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+        height: 10px;
+    }
+    #voltar{
+        size: 20px;
+        height: 7vw;
+        width: 15vw;
+    }
+    .campanha h1 {
+        font-size: 20px;
+    }
+
+    .criação {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .causa1,
+    .causa2 {
+        width: 100%;
+        height: auto;
+    }
+
+    .Perfil {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    #foto_perfil {
+        height: 20vh;
+        width: 20vh;
+        margin: 5vw;
+    }
+
+    .infos {
+        width: 90%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .infos p {
+        font-size: 16px;
+    }
+
+    .infos h1 {
+        font-size: 24px;
+    }
+
+    #editar {
+        width: 200px;
+        font-size: 18px;
+    }
+
+    .local {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .local h1 {
+        font-size: 30px;
+    }
+
+    .local p {
+        font-size: 17px;
+    }
+
+    #precisa {
+        width: 60vw;
+        height: 20vw;
+        margin: 10px;
+        font-size: 30px;
+    }
+
+    .redes {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        gap: 5px;
+        height: 15vw;
+    }
+
+    .redes a {
+        font-size: 24px;
+    }
 }
 

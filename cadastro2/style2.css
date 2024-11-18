@@ -28,10 +28,10 @@ nav h1 {
 
 /* SECTION 1 */
 .section-1 {
-    background-image: url(../imagens/background_cadastro2.jpeg); /* Imagem de fundo original */
+    background-image: url(../imagens/background_cadastro2.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 0;
     height: 86vh;
     width: 100%;
     padding-left: 4vw;
@@ -43,8 +43,8 @@ nav h1 {
 
 /* CADASTRO */
 .cadastro {
-    width: 500px;
-    height: auto;
+    width: 450px;
+    height: 750px;
     max-width: 100%;
     border-radius: 20px;
     display: flex;
@@ -66,7 +66,7 @@ nav h1 {
 .cadastro input {
     color: var(--cinza);
     height: 50px;
-    width: 420px; /* Largura fixada */
+    width: 400px; /* Largura fixada */
     border: none;
     padding-top: 30px;
     font-family: "Montserrat", sans-serif;
@@ -86,7 +86,6 @@ nav h1 {
     color: aliceblue;
     font-weight: bold;
     font-size: 18px;
-    margin-top: 10px;
 }
 
 .cadastro button:hover {
@@ -114,14 +113,17 @@ nav h1 {
 }
 
 .cadastro h2 {
+    width: 90%;
+    display: flex;
+    align-items: start;
     font-size: 17px;
-    padding-right: 200px;
-    padding-top: 20px;
 }
 
 .cadastro h3 {
+    width: 90%;
+    display: flex;
+    align-items: start;
     font-size: 17px;
-    padding-right: 170px;
 }
 
 .cadastro a {
@@ -131,8 +133,10 @@ nav h1 {
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
     .section-1 {
-        padding-left: 2vw;
-        align-items: flex-start;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
     }
 
     .cadastro {
@@ -144,7 +148,7 @@ nav h1 {
     }
 
     .cadastro input {
-        width: 90%; /* Ajusta a largura dos inputs */
+        width: 70vw; /* Ajusta a largura dos inputs */
         font-size: 20px;
     }
 
@@ -165,7 +169,7 @@ nav h1 {
 
     .cadastro input {
         font-size: 18px;
-        width: 100%;
+        width: 65vw;
     }
 
     .cadastro button {

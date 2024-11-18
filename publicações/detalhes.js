@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <h1>Você também pode nos ajudar com:</h1><br>
                                 <p>${data.data.necessidade}</p>
                             </div>
+                    
                             <div class="necessidade">
                                 <div class="redes">
                                     <h1>Você pode nos seguir nas nossas redes sociais:</h1>

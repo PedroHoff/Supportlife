@@ -317,4 +317,113 @@ input{
 a{
     text-decoration: none;
 }
+/* Seu CSS original permanece inalterado acima deste ponto */
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    .perfil {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .div1 {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .campanha {
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        height: 10px;
+    }
+
+    .campanha h1 {
+        font-size: 20px;
+    }
+
+    .criação {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .causa1,
+    .causa2 {
+        width: 100%;
+        height: auto;
+    }
+
+    .Perfil {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    #foto_perfil {
+        height: 20vh;
+        width: 20vh;
+        margin: 5vw;
+    }
+
+    .infos {
+        width: 90%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .infos p {
+        font-size: 16px;
+    }
+
+    .infos h1 {
+        font-size: 24px;
+    }
+
+    #editar {
+        width: 200px;
+        font-size: 18px;
+    }
+
+    .local {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .local h1 {
+        font-size: 30px;
+    }
+
+    .local p {
+        font-size: 20px;
+    }
+
+    #precisa {
+        width: 60vw;
+        height: 20vw;
+        margin: 10px;
+        font-size: 30px;
+    }
+
+    .redes {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        gap: 5px;
+        height: 15vw;
+    }
+
+    .redes a {
+        font-size: 24px;
+    }
+}
 

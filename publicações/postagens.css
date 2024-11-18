@@ -5,7 +5,6 @@
 }
 
 /* NAVBAR */
-
 .nav h1 {
     display: flex;
     align-items: center;
@@ -22,9 +21,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
-.titulo{
+
+.titulo {
     padding: 20px;
     font-weight: 600;
     color: rgb(83, 83, 83);
@@ -33,7 +32,8 @@ body {
     justify-content: space-between;
     flex-direction: row;
 }
-#voltar{
+
+#voltar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,21 +45,26 @@ body {
     border: none;
     font-size: larger;
 }
+
+/* Grid de postagens */
 .postagens-list {
     background-color: #0e504c;
     min-height: 100vh;
     width: 150vh;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas por padrão */
     border-radius: 15px;
-    gap: 20px; 
+    gap: 20px;
 }
-.imagem-postagem{
+
+/* Imagens */
+.imagem-postagem {
     width: 27vh;
     height: 27vh;
     padding: 20px;
 }
+
 .causa-card {
     background-color: white;
     height: 20vw;
@@ -70,19 +75,88 @@ body {
     justify-content: space-around;
     border-radius: 15px;
 }
-.info{
+
+.info {
     width: 25vh;
     height: 15vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.info h3{
+
+.info h3 {
     text-align: center;
 }
-.info h4{
+
+.info h4 {
     padding-top: 10px;
     font-family: Verdana;
     text-align: center;
     color: rgb(80, 80, 80);
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .postagens-list {
+        width: 100%; /* Reduz largura para caber melhor */
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .titulo {
+        flex-direction: column; /* Alinha itens verticalmente */
+        align-items: center;
+        text-align: center;
+    }
+
+    #voltar {
+        width: 15vh;
+        height: 5vh;
+        font-size: medium;
+    }
+}
+
+@media (max-width: 768px) {
+    .postagens-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    }
+
+    .imagem-postagem {
+        width: 20vh;
+        height: 20vh;
+    }
+
+    .causa-card {
+        height: 45vh; /* Altura dinâmica para caber conteúdos */
+    }
+
+    .info {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .postagens-list {
+        grid-template-columns: repeat(1, 1fr); /* 1 coluna em telas pequenas */
+        gap: 10px; /* Reduz espaçamento */
+    }
+
+    .imagem-postagem {
+        width: 100%;
+        height: auto; /* Ajusta altura proporcionalmente */
+    }
+
+    .titulo {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    #voltar {
+        width: auto;
+        height: auto;
+        padding: 10px;
+    }
 }

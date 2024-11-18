@@ -1,21 +1,21 @@
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-:root{
+
+:root {
     --verde-claro: #007432;
     --verde-forte: #005023;
     --verde-forte1: #003316;
 }
 
-body{
+body {
     font-family: "Montserrat", sans-serif;
 }
 
 /* NAVBAR */
-
-nav h1{
+nav h1 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,12 +26,10 @@ nav h1{
     font-style: italic;
     background-color: #0e504c;
     color: white;
-
 }
 
 /* SECTION 1 */
-
-.section-1{
+.section-1 {
     height: 86vh;
     display: flex;
     flex-direction: row;
@@ -41,14 +39,12 @@ nav h1{
 }
 
 /* CADASTRO */
-
-.perfil{
+.perfil, .campanha {
     width: 65vh;
     height: 56vh;
     padding: 20px;
-    background-image: url(../imagens/imagem_perfil.PNG);
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 20px;
     gap: 90px;
     display: flex;
@@ -57,27 +53,81 @@ nav h1{
     text-decoration: solid;
     border: none;
 }
-.perfil h1{
+
+.perfil {
+    background-image: url(../imagens/imagem_perfil.PNG);
+}
+
+.campanha {
+    background-image: url(../imagens/imagem_campanha.PNG);
+}
+
+.perfil h1, .campanha h1 {
     font-size: 45px;
     color: white;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
-.campanha{
-    width: 65vh;
-    height: 56vh;
-    padding: 20px;
-    background-image: url(../imagens/imagem_campanha.PNG);
-    background-size: cover;
-    gap: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+    .section-1 {
+        flex-direction: column;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: auto;
+        padding: 20px;
+        gap: 20px;
+        height: 160vw;
+    }
+
+    .perfil, .campanha {
+        display: flex;
+        height: 30vh;
+        width: 50vw;
+    }
+
+    .perfil h1, .campanha h1 {
+        font-size: 32px;
+        text-align: center;
+    }
 }
-.campanha h1{
-    font-size: 45px;
-    color: white;
+
+@media (max-width: 768px) {
+    .section-1 {
+        flex-direction: column;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;    
+        height:90vh;
+        padding: 20px;
+        gap: 20px;
+    }
+    nav h1 {
+        font-size: 24px;
+        height: 10vh;
+    }
+
+    .perfil, .campanha {
+        display: flex;
+        height: 30vh;
+        width: 50vw;
+    }
+
+    .perfil h1, .campanha h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .perfil, .campanha {
+        height: 25vh;
+    }
+
+    .perfil h1, .campanha h1 {
+        font-size: 20px;
+    }
 }

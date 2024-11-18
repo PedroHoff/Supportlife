@@ -25,10 +25,13 @@ nav h1 {
     font-size: 30px;
     font-style: italic;
 }
+nav{
+    background-color: #dae0e7;
+}
 
 /* SECTION 1 */
 .section-1 {
-    background-image: url(../imagens/enchenters4.jpeg);
+    background-image: url(../imagens/enchenters.JPG);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0;
@@ -43,8 +46,8 @@ nav h1 {
 
 /* CADASTRO */
 .cadastro {
-    width: 500px;
-    height: auto;
+    width: 450px;
+    height: 750px;
     max-width: 100%;
     border-radius: 20px;
     display: flex;
@@ -66,7 +69,7 @@ nav h1 {
 .cadastro input {
     color: var(--cinza);
     height: 50px;
-    width: 420px; /* Largura fixada */
+    width: 400px; /* Largura fixada */
     border: none;
     padding-top: 30px;
     font-family: "Montserrat", sans-serif;
@@ -86,7 +89,6 @@ nav h1 {
     color: aliceblue;
     font-weight: bold;
     font-size: 18px;
-    margin-top: 10px;
 }
 
 .cadastro button:hover {
@@ -114,14 +116,17 @@ nav h1 {
 }
 
 .cadastro h2 {
+    width: 90%;
+    display: flex;
+    align-items: start;
     font-size: 17px;
-    padding-right: 200px;
-    padding-top: 20px;
 }
 
 .cadastro h3 {
+    display: flex;
+    align-items: start;
     font-size: 17px;
-    padding-right: 170px;
+    width: 90%;
 }
 
 .cadastro a {
@@ -138,8 +143,10 @@ nav h1 {
 
 @media (max-width: 768px) {
     .section-1 {
-        padding-left: 2vw;
-        align-items: flex-start; /* Alinha o formulário à esquerda */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
     }
     .cadastro {
         width: 90%; /* Ajusta o tamanho do formulário em telas pequenas */
@@ -148,7 +155,7 @@ nav h1 {
         font-size: 24px; /* Ajusta o tamanho do título */
     }
     .cadastro input {
-        width: 90%; /* Ajusta a largura dos inputs */
+        width: 70vw; /* Ajusta a largura dos inputs */
         font-size: 20px; /* Ajusta o tamanho da fonte */
     }
     .cadastro button {
@@ -158,18 +165,38 @@ nav h1 {
 }
 
 @media (max-width: 480px) {
+    .section-1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .cadastro {
-        width: 90%; /* Ajusta o formulário em dispositivos móveis */
+        width: 80%; /* Ajusta o formulário em dispositivos móveis */
+        height: 80vh;
     }
     .cadastro h1 {
-        font-size: 22px; /* Ajusta o título */
+        font-size: 20px; /* Ajusta o título */
+    }
+    .cadastro h2{
+        width: 90%;
+        text-align: justify;
+        font-size: 15px;
+    }
+    .cadastro h3{
+        width: 90%;
+        text-align: justify;
+        font-size: 15px;
     }
     .cadastro input {
         font-size: 18px; /* Ajusta o tamanho da fonte */
-        width: 100%; /* Os inputs ocupam 100% da largura */
+        width: 60vw; /* Os inputs ocupam 100% da largura */
     }
     .cadastro button {
         width: 100%; /* Ajusta o botão para a largura total */
         font-size: 16px;
+    }
+    .cadastro-input input{
+        width: 20vw;
+        background-color: #03B651;
     }
 }
