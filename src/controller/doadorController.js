@@ -9,7 +9,7 @@ if (!fs.existsSync(uploadPath)) {
 }
 
 async function storeDoador(request, response) {
-    const imagem = request.files?.imagem; // Captura a imagem enviada
+    const imagem = request.files?.imagem; // pega a imagem enviada
     let imagemNome = null;
 
     if (imagem) {
@@ -17,8 +17,8 @@ async function storeDoador(request, response) {
         await imagem.mv(path.join(uploadPath, imagemNome)); // Move a imagem para a pasta 'uploads'
     }
 
-    const { doadorId } = request.params; // Captura o ID do doador a ser atualizado
-    const { dataNascimento, localizacao, Facebook, Instagram, Twitter, LinkedIn } = request.body; // Captura os dados do formulário
+    const { doadorId } = request.params; // pega o ID do doador a ser atualizado
+    const { dataNascimento, localizacao, Facebook, Instagram, Twitter, LinkedIn } = request.body; // pega os dados do formulário
 
     // Verifica se o ID e os dados foram enviados corretamente
     if (!doadorId || !dataNascimento || !localizacao) {
@@ -29,7 +29,7 @@ async function storeDoador(request, response) {
     }
 
     const query = "UPDATE cadastro_doador SET imagem = ?, dataNascimento = ?, localizacao = ?, Facebook = ?, Instagram = ?, Twitter = ?, LinkedIn = ? WHERE id = ?";
-    const params = [imagemNome, dataNascimento, localizacao, Facebook, Instagram, Twitter, LinkedIn, doadorId]; // Use doadorId aqui
+    const params = [imagemNome, dataNascimento, localizacao, Facebook, Instagram, Twitter, LinkedIn, doadorId]; 
 
     connection.query(query, params, (err, results) => {
         if (err) {
@@ -43,7 +43,7 @@ async function storeDoador(request, response) {
         return response.status(200).json({
             success: true,
             message: 'Perfil atualizado com sucesso',
-            data: { dataNascimento, localizacao, Facebook, Instagram, Twitter, LinkedIn, imagem: imagemNome }
+            data: { dataNascimento, localizacao, Facebook, Instagram, Twitter, LinkedIn, imagem: imagemNome } // armazena os dados em data
         });
     });
 }

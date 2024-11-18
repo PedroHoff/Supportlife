@@ -18,12 +18,12 @@ async function storeInstituicao(request, response) {
         await imagem.mv(path.join(uploadPath, imagemNome));
     }
 
-    // Obtendo o userId diretamente dos parâmetros da URL
-    const { userId } = request.params; 
+    
+    const { userId } = request.params; // pega o userId 
     const { dataNascimento, localizacao, pix, Facebook, Instagram, Twitter, LinkedIn} = request.body; 
 
     const query = "UPDATE instituicao SET imagem = ?, dataNascimento = ?, localizacao = ?, pix = ?, Facebook = ?, Instagram = ?, Twitter = ?, LinkedIn = ? WHERE id = ?";
-    const params = [imagemNome, dataNascimento, localizacao, pix, Facebook, Instagram, Twitter, LinkedIn, userId];
+    const params = [imagemNome, dataNascimento, localizacao, pix, Facebook, Instagram, Twitter, LinkedIn, userId]; // aqui no params ele define o que vai ser substituído em cada ? na query
 
     connection.query(query, params, (err, results) => {
         if (err) {
@@ -36,7 +36,7 @@ async function storeInstituicao(request, response) {
         return response.status(200).json({
             success: true,
             message: 'Perfil atualizado com sucesso',
-            data: { dataNascimento, localizacao, pix, Facebook, Instagram, Twitter, LinkedIn, imagem: imagemNome }
+            data: { dataNascimento, localizacao, pix, Facebook, Instagram, Twitter, LinkedIn, imagem: imagemNome } // armazena os dados em data
             
         });
     });
@@ -44,11 +44,11 @@ async function storeInstituicao(request, response) {
 
 
 async function getInstituicao(request, response) {
-    // Obtendo o userId diretamente dos parâmetros da URL
-    const { userId } = request.params; 
+    
+    const { userId } = request.params; // pega o userId 
 
     const query = "SELECT nome, imagem, dataNascimento, localizacao, pix, Facebook, Instagram, Twitter, LinkedIn FROM instituicao WHERE id = ?";
-    const params = [userId];
+    const params = [userId]; // ele pega essas informações específicas do userId que está sendo utilizado
     
     connection.query(query, params, (err, results) => {
         if (err) {
@@ -59,10 +59,10 @@ async function getInstituicao(request, response) {
             });
         }
 
-        if (results.length > 0) {
+        if (results.length > 0) { // verifica se tem algo em results
             return response.status(200).json({
-                success: true,
-                data: results[0]
+                success: true,  // da sucesso
+                data: results[0] // envia os dados na resposta
             });
         } else {
             return response.status(404).json({

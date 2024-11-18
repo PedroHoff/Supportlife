@@ -1,13 +1,13 @@
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', async () => { //adiciona um evento para quando recarregar a página
     const response = await fetch('http://localhost:3000/api/get/postar');
     const result = await response.json();
 
     document.getElementById("voltar").addEventListener("click", function() {
-        window.history.back();
+        window.history.back(); // adiciona o window.history.back no botão para voltar uma página
     });
     if(result.success) {
-        const postagensList = document.querySelector('.postagens-list');
-        result.data.forEach(postar => {  
+        const postagensList = document.querySelector('.postagens-list'); // pega a postagens-list 
+        result.data.forEach(postar => {  // para cada postagem ele faz um card dentro da postagens-list
             const card = document.createElement('div');
             card.className = 'causa-card';
 

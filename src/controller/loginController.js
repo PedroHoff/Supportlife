@@ -3,14 +3,19 @@ require("dotenv").config();
 const bcrypt = require('bcrypt');
 
 async function login(request, response) {
-    const queryDoador = "SELECT * FROM cadastro_doador WHERE `email` = ?";
-    const queryInstituicao = "SELECT * FROM instituicao WHERE `email` = ?";
-    const params = [request.body.email];
+    async function login(request, response) {
+        // define as queries pra ver se é um doador ou uma instituição pelo email
+        const queryDoador = "SELECT * FROM cadastro_doador WHERE `email` = ?"; 
+        const queryInstituicao = "SELECT * FROM instituicao WHERE `email` = ?"; 
+    }
+       
+        const params = [request.body.email];  // pega o email
+    
 
-    connection.query(queryDoador, params, (errDoador, resultsDoador) => {
+    connection.query(queryDoador, params, (errDoador, resultsDoador) => { // verifica o email está no cadastro_doador
         if (errDoador) {
             return response.status(400).send({
-                msg: 'Ocorreu um erro na consulta.'
+                msg: 'Ocorreu um erro na consulta.' //
             });
         }
 
@@ -20,16 +25,16 @@ async function login(request, response) {
                 if (err || !result) {
                     return response.status(400).send({ msg: 'Email ou senha incorretos!' });
                 }
-                const userData = resultsDoador[0];
-                const doadorId = userData.id;
-                delete userData.senha; // Remover a senha do objeto
+                const userData = resultsDoador[0]; // Pega os dados do primeiro doador encontrado na consulta (dados do doador com o email fornecido)
+                const doadorId = userData.id; //o doadorId vai ser userData.id pega o id do userData
+                delete userData.senha; // Remover a senha 
 
                 return response.status(200).json({
                     success: true,
                     message: 'Sucesso! Usuário conectado.',
-                    data: userData,
+                    data: userData, // retorna os dados do usuário(userData) para data.
                     tipo: 'doador',
-                    doadorId // Retorna o userId
+                    doadorId // Retorna o ID do doador
                 });
             });
         } else {
@@ -54,8 +59,8 @@ async function login(request, response) {
                         return response.status(200).json({
                             success: true,
                             message: 'Sucesso! Usuário conectado.',
-                            data: userData,
-                            userId // Retorna o userId
+                            data: userData, // retorna os dados do usuário(userData) para data.
+                            userId // Retorna o ID da instituicao
                         });
                     });
                 } else {

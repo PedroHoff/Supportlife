@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'GET'
             });
 
-            if (!response.ok) {
+            if (!response.ok) { // se der erro ele exibe o status do servidor do servidor
                 throw new Error(`Erro: ${response.status}`);
             }
 
@@ -28,14 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (result.success) {
                 const perfil = result.data;
-                const dataNascimentoOriginal = result.data.dataNascimento.split('T')[0];
-                const dataNascimento = new Date(dataNascimentoOriginal);
-                const dia = String(dataNascimento.getDate() + 1).padStart(2, '0');
-                const mes = String(dataNascimento.getMonth() + 1).padStart(2, '0');
-                const ano = dataNascimento.getFullYear();
-                const dataFormatada = `${dia}-${mes}-${ano}`;
+                const dataNascimentoOriginal = result.data.dataNascimento.split('T')[0]; // split da string para separar a data e o horário, pegando apenas a parte da data ('YYYY-MM-DD').
+                const dataNascimento = new Date(dataNascimentoOriginal); // declara que dataNascimento é a data correta
+                const dia = String(dataNascimento.getDate() + 1).padStart(2, '0'); // pega o dia e acrescenta 1 para não ter erro na exibição
+                const mes = String(dataNascimento.getMonth() + 1).padStart(2, '0'); // pega o mes e acrescenta 1 para não ficar janeiro como mes 0 e dezembro mes 11
+                const ano = dataNascimento.getFullYear(); // pega o ano
+                const dataFormatada = `${dia}-${mes}-${ano}`; // formata a data para não ficar no padrão YYYY-MM-DD
 
-                document.getElementById('datadeNascimento').textContent += ` ${dataFormatada}`;
+                document.getElementById('datadeNascimento').textContent += ` ${dataFormatada}`; // adiciona as coisas nas variáveis
                 document.getElementById('local').textContent = result.data.localizacao;
                 document.getElementById('foto_perfil').style.backgroundImage = `url('http://localhost:3000/uploads/${result.data.imagem}')`;
 
@@ -102,9 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: dadosForm
                 });
                 
-                if (!response.ok) {
-                    const errorText = await response.text(); // Captura a resposta como texto
-                    console.error('Erro ao atualizar o perfil:', response.status, errorText);
+                if (!response.ok) { // se não tiver resposta / se der erro na atualização de perfil
+                    const errorText = await response.text(); // pega o texto do erro
+                    console.error('Erro ao atualizar o perfil:', response.status, errorText); // exibe o texto do erro
                     alert("Erro ao atualizar o perfil: " + response.status);
                     return; // Retorna para evitar continuar com o processamento
                 }

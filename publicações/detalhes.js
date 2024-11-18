@@ -1,13 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const postarId = urlParams.get("id");
+document.addEventListener('DOMContentLoaded', function() { //add um evento para quando recarregar a página
+ 
     
-    if (postarId) {
+    const urlParams = new URLSearchParams(window.location.search);// Obtém os parâmetros da url da página atual
+    
+    
+    const postarId = urlParams.get("id"); // Pega o valor do parâmetro "id" da URL (representando o ID da publicação)
+    
+   
+    if (postarId) {  // Verifica se o "id" foi encontrado na URL
+        // Faz um GET e pega os detalhes da publicação do ID de acordo com o getPostarbyID
         fetch(`http://localhost:3000/api/get/postar/detalhes/${postarId}`)
-            .then(response => response.json())
+            .then(response => response.json()) // Converte a resposta da requisição para JSON
             .then(data => {
+                
+                // Obtém o elemento HTML com o id "detalhes" onde os dados serão inseridos
                 const detalhesMain = document.getElementById("detalhes");
+                
+               
                 if (data.success) {
+                    // Se a requisição foi bem-sucedida, insere os detalhes da publicação no elemento "detalhes"
                     detalhesMain.innerHTML = `
                     <head>
                         <meta charset="UTF-8">
